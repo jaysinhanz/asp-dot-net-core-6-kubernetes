@@ -11,10 +11,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["frontend/frontend.csproj", "frontend/"]
-RUN dotnet restore "./frontend/frontend.csproj"
+COPY ["frontend.csproj", "."]
+RUN dotnet restore "./frontend.csproj"
 COPY . .
-WORKDIR "/src/frontend"
+WORKDIR "/src/."
 RUN dotnet build "./frontend.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage

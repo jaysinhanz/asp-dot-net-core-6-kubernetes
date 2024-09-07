@@ -10,10 +10,10 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ordering/ordering.csproj", "ordering/"]
-RUN dotnet restore "./ordering/ordering.csproj"
+COPY ["ordering.csproj", "."]
+RUN dotnet restore "./ordering.csproj"
 COPY . .
-WORKDIR "/src/ordering"
+WORKDIR "/src/."
 RUN dotnet build "./ordering.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
