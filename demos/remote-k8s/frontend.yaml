@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: psgloboticket.azurecr.io/frontend
+        image: psgloboticketj.azurecr.io/frontend
         resources:
           requests:
             memory: "500Mi"

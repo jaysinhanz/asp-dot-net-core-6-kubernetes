@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: catalog
-        image: psgloboticket.azurecr.io/catalog
+        image: psgloboticketj.azurecr.io/catalog
         resources:
           requests:
             memory: "500Mi"
